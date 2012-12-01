@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="core" root=".">
+      <df name="autom4te.cache">
+      </df>
+      <df name="converters">
+        <in>AbstractFileLoader.cpp</in>
+        <in>AbstractFileSaver.cpp</in>
+        <in>AbstractLoader.cpp</in>
+        <in>AbstractSaver.cpp</in>
+        <in>ArffLoader.cpp</in>
+        <in>ArffSaver.cpp</in>
+        <in>BatchConverter.cpp</in>
+        <in>C45Loader.cpp</in>
+        <in>C45Saver.cpp</in>
+        <in>CSVLoader.cpp</in>
+        <in>CSVSaver.cpp</in>
+        <in>ConverterUtils.cpp</in>
+        <in>DatabaseConnection.cpp</in>
+        <in>DatabaseConverter.cpp</in>
+        <in>DatabaseLoader.cpp</in>
+        <in>DatabaseSaver.cpp</in>
+        <in>FileSourcedConverter.cpp</in>
+        <in>IncrementalConverter.cpp</in>
+        <in>LibSVMLoader.cpp</in>
+        <in>LibSVMSaver.cpp</in>
+        <in>Loader.cpp</in>
+        <in>SVMLightLoader.cpp</in>
+        <in>SVMLightSaver.cpp</in>
+        <in>Saver.cpp</in>
+        <in>SerializedInstancesLoader.cpp</in>
+        <in>SerializedInstancesSaver.cpp</in>
+        <in>TextDirectoryLoader.cpp</in>
+        <in>URLSourcedLoader.cpp</in>
+        <in>XRFFLoader.cpp</in>
+        <in>XRFFSaver.cpp</in>
+      </df>
+      <df name="logging">
+        <in>ConsoleLogger.cpp</in>
+        <in>FileLogger.cpp</in>
+        <in>Logger.cpp</in>
+        <in>OutputLogger.cpp</in>
+      </df>
+      <df name="mathematicalexpression">
+        <in>Parser.cpp</in>
+        <in>Scanner.cpp</in>
+        <in>sym.cpp</in>
+      </df>
+      <df name="matrix">
+        <in>CholeskyDecomposition.cpp</in>
+        <in>DoubleVector.cpp</in>
+        <in>EigenvalueDecomposition.cpp</in>
+        <in>ExponentialFormat.cpp</in>
+        <in>FlexibleDecimalFormat.cpp</in>
+        <in>FloatingPointFormat.cpp</in>
+        <in>IntVector.cpp</in>
+        <in>LUDecomposition.cpp</in>
+        <in>LinearRegression.cpp</in>
+        <in>Maths.cpp</in>
+        <in>Matrix.cpp</in>
+        <in>QRDecomposition.cpp</in>
+        <in>SingularValueDecomposition.cpp</in>
+      </df>
+      <df name="neighboursearch">
+        <df name="balltrees">
+          <in>BallNode.cpp</in>
+          <in>BallSplitter.cpp</in>
+          <in>BallTreeConstructor.cpp</in>
+          <in>BottomUpConstructor.cpp</in>
+          <in>MedianDistanceFromArbitraryPoint.cpp</in>
+          <in>MedianOfWidestDimension.cpp</in>
+          <in>MiddleOutConstructor.cpp</in>
+          <in>PointsClosestToFurthestChildren.cpp</in>
+          <in>TopDownConstructor.cpp</in>
+        </df>
+        <df name="covertrees">
+          <in>Stack.cpp</in>
+        </df>
+        <df name="kdtrees">
+          <in>KDTreeNode.cpp</in>
+          <in>KDTreeNodeSplitter.cpp</in>
+          <in>KMeansInpiredMethod.cpp</in>
+          <in>MedianOfWidestDimension.cpp</in>
+          <in>MidPointOfWidestDimension.cpp</in>
+          <in>SlidingMidPointOfWidestSide.cpp</in>
+        </df>
+        <in>BallTree.cpp</in>
+        <in>CoverTree.cpp</in>
+        <in>KDTree.cpp</in>
+        <in>LinearNNSearch.cpp</in>
+        <in>NearestNeighbourSearch.cpp</in>
+        <in>PerformanceStats.cpp</in>
+        <in>PerformanceStats.hpp</in>
+        <in>TreePerformanceStats.cpp</in>
+      </df>
+      <df name="pmml">
+        <in>Apply.cpp</in>
+        <in>BuiltInArithmetic.cpp</in>
+        <in>BuiltInMath.cpp</in>
+        <in>BuiltInString.cpp</in>
+        <in>Constant.cpp</in>
+        <in>DefineFunction.cpp</in>
+        <in>DerivedFieldMetaInfo.cpp</in>
+        <in>Discretize.cpp</in>
+        <in>Expression.cpp</in>
+        <in>FieldMetaInfo.cpp</in>
+        <in>FieldRef.cpp</in>
+        <in>Function.cpp</in>
+        <in>MappingInfo.cpp</in>
+        <in>MiningFieldMetaInfo.cpp</in>
+        <in>MiningSchema.cpp</in>
+        <in>NormContinuous.cpp</in>
+        <in>NormDiscrete.cpp</in>
+        <in>PMMLFactory.cpp</in>
+        <in>PMMLModel.cpp</in>
+        <in>PMMLUtils.cpp</in>
+        <in>TargetMetaInfo.cpp</in>
+        <in>TransformationDictionary.cpp</in>
+      </df>
+      <df name="stemmers">
+        <in>IteratedLovinsStemmer.cpp</in>
+        <in>LovinsStemmer.cpp</in>
+        <in>NullStemmer.cpp</in>
+        <in>SnowballStemmer.cpp</in>
+        <in>Stemmer.cpp</in>
+        <in>Stemming.cpp</in>
+      </df>
+      <df name="tokenizers">
+        <in>AlphabeticTokenizer.cpp</in>
+        <in>CharacterDelimitedTokenizer.cpp</in>
+        <in>NGramTokenizer.cpp</in>
+        <in>Tokenizer.cpp</in>
+        <in>WordTokenizer.cpp</in>
+      </df>
+      <df name="xml">
+        <in>KOML.cpp</in>
+        <in>MethodHandler.cpp</in>
+        <in>PropertyHandler.cpp</in>
+        <in>SerialUIDChanger.cpp</in>
+        <in>XMLBasicSerialization.cpp</in>
+        <in>XMLDocument.cpp</in>
+        <in>XMLInstances.cpp</in>
+        <in>XMLOptions.cpp</in>
+        <in>XMLSerialization.cpp</in>
+        <in>XMLSerializationMethodHandler.cpp</in>
+        <in>XStream.cpp</in>
+      </df>
+      <in>AbstractStringDistanceFunction.cpp</in>
+      <in>AbstractStringDistanceFunction.hpp</in>
+      <in>AdditionalMeasureProducer.cpp</in>
+      <in>AlgVector.cpp</in>
+      <in>AlgVector.hpp</in>
+      <in>AllJavadoc.cpp</in>
+      <in>Attribute.cpp</in>
+      <in>Attribute.hpp</in>
+      <in>AttributeExpression.cpp</in>
+      <in>AttributeExpression.hpp</in>
+      <in>AttributeLocator.cpp</in>
+      <in>AttributeStats.cpp</in>
+      <in>BinarySparseInstance.cpp</in>
+      <in>Capabilities.cpp</in>
+      <in>CapabilitiesHandler.cpp</in>
+      <in>ChebyshevDistance.cpp</in>
+      <in>Check.cpp</in>
+      <in>CheckGOE.cpp</in>
+      <in>CheckOptionHandler.cpp</in>
+      <in>CheckScheme.cpp</in>
+      <in>ClassDiscovery.cpp</in>
+      <in>ClassloaderUtil.cpp</in>
+      <in>ContingencyTables.cpp</in>
+      <in>Debug.cpp</in>
+      <in>DistanceFunction.hpp</in>
+      <in>Drawable.cpp</in>
+      <in>EditDistance.cpp</in>
+      <in>Enumeration.hpp</in>
+      <in>Environment.cpp</in>
+      <in>EnvironmentHandler.cpp</in>
+      <in>EuclideanDistance.cpp</in>
+      <in>FastVector.cpp</in>
+      <in>FastVector.hpp</in>
+      <in>FindWithCapabilities.cpp</in>
+      <in>GlobalInfoJavadoc.cpp</in>
+      <in>Instance.cpp</in>
+      <in>Instance.hpp</in>
+      <in>InstanceComparator.cpp</in>
+      <in>Instances.cpp</in>
+      <in>Instances.hpp</in>
+      <in>Javadoc.cpp</in>
+      <in>Jython.cpp</in>
+      <in>JythonObject.cpp</in>
+      <in>JythonSerializableObject.cpp</in>
+      <in>ListOptions.cpp</in>
+      <in>ManhattanDistance.cpp</in>
+      <in>Matchable.cpp</in>
+      <in>MathematicalExpression.cpp</in>
+      <in>Matrix.cpp</in>
+      <in>Memory.cpp</in>
+      <in>MultiInstanceCapabilitiesHandler.cpp</in>
+      <in>NoSupportForMissingValuesException.cpp</in>
+      <in>NormalizableDistance.cpp</in>
+      <in>NormalizableDistance.hpp</in>
+      <in>Object.hpp</in>
+      <in>Optimization.cpp</in>
+      <in>Option.cpp</in>
+      <in>OptionHandler.hpp</in>
+      <in>OptionHandlerJavadoc.cpp</in>
+      <in>PropertyPath.cpp</in>
+      <in>ProtectedProperties.cpp</in>
+      <in>Queue.cpp</in>
+      <in>Random.cpp</in>
+      <in>Random.hpp</in>
+      <in>RandomVariates.cpp</in>
+      <in>Randomizable.cpp</in>
+      <in>Range.cpp</in>
+      <in>Range.hpp</in>
+      <in>RelationalLocator.cpp</in>
+      <in>RevisionHandler.hpp</in>
+      <in>RevisionUtils.cpp</in>
+      <in>SelectedTag.cpp</in>
+      <in>SerializationHelper.cpp</in>
+      <in>SerializedObject.cpp</in>
+      <in>SingleIndex.cpp</in>
+      <in>SparseInstance.cpp</in>
+      <in>SpecialFunctions.cpp</in>
+      <in>Statistics.cpp</in>
+      <in>Stopwords.cpp</in>
+      <in>StringLocator.cpp</in>
+      <in>Summarizable.cpp</in>
+      <in>SystemInfo.cpp</in>
+      <in>Tag.cpp</in>
+      <in>TechnicalInformation.cpp</in>
+      <in>TechnicalInformationHandler.cpp</in>
+      <in>TechnicalInformationHandlerJavadoc.cpp</in>
+      <in>Tee.cpp</in>
+      <in>TestInstances.cpp</in>
+      <in>Trie.cpp</in>
+      <in>UnassignedClassException.cpp</in>
+      <in>UnassignedDatasetException.cpp</in>
+      <in>Undoable.cpp</in>
+      <in>UnsupportedAttributeTypeException.cpp</in>
+      <in>UnsupportedClassTypeException.cpp</in>
+      <in>Utils.cpp</in>
+      <in>Version.cpp</in>
+      <in>WeightedInstancesHandler.cpp</in>
+      <in>WekaException.cpp</in>
+      <in>config.h</in>
+      <in>dummy.cpp</in>
+      <in>dummy.hpp</in>
+      <in>libs.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>configure</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="AdditionalMeasureProducer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="AlgVector.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="AlgVector.hpp" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="AllJavadoc.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Attribute.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Attribute.hpp" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="AttributeExpression.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="AttributeExpression.hpp" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="AttributeLocator.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="AttributeStats.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="BinarySparseInstance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Capabilities.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CapabilitiesHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ChebyshevDistance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Check.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CheckGOE.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CheckOptionHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CheckScheme.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ClassDiscovery.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ClassloaderUtil.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ContingencyTables.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Debug.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Drawable.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="EditDistance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Environment.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="EnvironmentHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="EuclideanDistance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="FastVector.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="FindWithCapabilities.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="GlobalInfoJavadoc.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Instance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="InstanceComparator.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Instances.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Javadoc.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Jython.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="JythonObject.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="JythonSerializableObject.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ListOptions.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ManhattanDistance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Matchable.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="MathematicalExpression.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Matrix.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Memory.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="MultiInstanceCapabilitiesHandler.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="NoSupportForMissingValuesException.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="NormalizableDistance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Optimization.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Option.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="OptionHandlerJavadoc.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="PropertyPath.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="ProtectedProperties.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Queue.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Random.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="RandomVariates.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Randomizable.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Range.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Range.hpp" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="RelationalLocator.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="RevisionUtils.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SelectedTag.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SerializationHelper.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SerializedObject.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SingleIndex.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SparseInstance.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SpecialFunctions.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Statistics.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Stopwords.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="StringLocator.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Summarizable.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="SystemInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Tag.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="TechnicalInformation.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="TechnicalInformationHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="TechnicalInformationHandlerJavadoc.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Tee.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="TestInstances.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Trie.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="UnassignedClassException.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="UnassignedDatasetException.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Undoable.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="UnsupportedAttributeTypeException.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="UnsupportedClassTypeException.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Utils.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="Version.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="WeightedInstancesHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="WekaException.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="config.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="converters/AbstractFileLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/AbstractFileSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/AbstractLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/AbstractSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/ArffLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/ArffSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/BatchConverter.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/C45Loader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/C45Saver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/CSVLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/CSVSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/ConverterUtils.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/DatabaseConnection.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/DatabaseConverter.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/DatabaseLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/DatabaseSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/FileSourcedConverter.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/IncrementalConverter.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/LibSVMLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/LibSVMSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/Loader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/SVMLightLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/SVMLightSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/Saver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/SerializedInstancesLoader.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="converters/SerializedInstancesSaver.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="converters/TextDirectoryLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/URLSourcedLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/XRFFLoader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="converters/XRFFSaver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="dummy.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="dummy.hpp" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libs.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="logging/ConsoleLogger.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="logging/FileLogger.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="logging/Logger.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="logging/OutputLogger.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="mathematicalexpression/Parser.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="mathematicalexpression/Scanner.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="mathematicalexpression/sym.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/CholeskyDecomposition.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/DoubleVector.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/EigenvalueDecomposition.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/ExponentialFormat.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/FlexibleDecimalFormat.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/FloatingPointFormat.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/IntVector.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/LUDecomposition.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/LinearRegression.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/Maths.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/Matrix.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/QRDecomposition.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="matrix/SingularValueDecomposition.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/BallTree.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="neighboursearch/CoverTree.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="neighboursearch/KDTree.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="neighboursearch/LinearNNSearch.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="neighboursearch/NearestNeighbourSearch.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/PerformanceStats.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/TreePerformanceStats.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/BallNode.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/BallSplitter.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/BallTreeConstructor.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/BottomUpConstructor.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/MedianDistanceFromArbitraryPoint.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/MedianOfWidestDimension.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/MiddleOutConstructor.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/PointsClosestToFurthestChildren.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/balltrees/TopDownConstructor.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/covertrees/Stack.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/KDTreeNode.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/KDTreeNodeSplitter.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/KMeansInpiredMethod.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/MedianOfWidestDimension.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/MidPointOfWidestDimension.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="neighboursearch/kdtrees/SlidingMidPointOfWidestSide.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="pmml/Apply.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/BuiltInArithmetic.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/BuiltInMath.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/BuiltInString.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/Constant.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/DefineFunction.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/DerivedFieldMetaInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/Discretize.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/Expression.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/FieldMetaInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/FieldRef.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/Function.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/MappingInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/MiningFieldMetaInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/MiningSchema.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/NormContinuous.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/NormDiscrete.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/PMMLFactory.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/PMMLModel.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/PMMLUtils.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/TargetMetaInfo.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="pmml/TransformationDictionary.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/IteratedLovinsStemmer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/LovinsStemmer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/NullStemmer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/SnowballStemmer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/Stemmer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="stemmers/Stemming.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="tokenizers/AlphabeticTokenizer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="tokenizers/CharacterDelimitedTokenizer.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tokenizers/NGramTokenizer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="tokenizers/Tokenizer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="tokenizers/WordTokenizer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/KOML.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/MethodHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/PropertyHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/SerialUIDChanger.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLBasicSerialization.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLDocument.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLInstances.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLOptions.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLSerialization.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="xml/XMLSerializationMethodHandler.cpp"
+            ex="true"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="xml/XStream.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
