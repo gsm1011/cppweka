@@ -22,8 +22,6 @@
 
 // package weka.core;
 
-// import java.io.IOException;
-// import java.io.Serializable;
 // import java.io.StreamTokenizer;
 // import java.io.StringReader;
 // import java.text.ParseException;
@@ -34,6 +32,7 @@
 // import java.util.Properties;
 #include <string>
 #include <stringstream>
+#include <time.h>
 #include "Copyable"
 #include "Serializable"
 #include "RevisionHandler"
@@ -96,8 +95,7 @@ using namespace std;
  * @author Eibe Frank (eibe@cs.waikato.ac.nz)
  * @version $Revision: 5975 $
  */
-class Attribute : public Copyable, 
-		  public Serializable, public RevisionHandler {
+class Attribute : public RevisionHandler {
 
   /** for serialization */
   // static final long serialVersionUID = -742180568732916383L;
