@@ -20,6 +20,11 @@
  *
  */
 
+#include "RevisionHandler.hpp"
+#include "Instances.hpp"
+#include <stdlib.h> 
+
+using namespace std;
 // package weka.core;
 
 // import java.io.Serializable;
@@ -32,15 +37,15 @@
  * @author  Gabi Schmidberger (gabi@cs.waikato.ac.nz)
  * @version $Revision: 1.10 $
  */
-class AlgVector : public Cloneable,
-		  public Serializable, 
+class AlgVector : /*public Cloneable,*/
+		  /**public Serializable, */
 		  public RevisionHandler {
 
-  /** for serialization */
-  // // // // private static final long serialVersionUID = -4023736016850256591L;
-protected: 
   /** The values of the matrix */
   double *m_Elements;
+  int m_numElements; 
+
+  // vector<double> m_Elements; 
 
 public:
   /**
@@ -51,8 +56,11 @@ public:
   AlgVector(int n) {
 
     m_Elements = new double[n];
-    initialize();
+    initialize(false);
   }
+
+  // copy constructor. 
+  AlgVector Algvector(const AlgVector& vect); 
 
  /**
    * Constructs a vector using a given array.
@@ -71,7 +79,8 @@ public:
    * @param random 	for initializing the attributes
    * @throws Exception	if something goes wrong
    */
-  AlgVector(Instances format, Random random) throw(Exception);
+  //AlgVector(Instances format, Random random) throw(Exception);
+  AlgVector(Instances format);
 
   /**
    * Constructs a vector using an instance.
@@ -82,58 +91,22 @@ public:
    * @throws Exception 	if instance doesn't have access to the data format or
    * 			no numeric attributes in the data
    */
-  AlgVector(Instance instance) throw(Exception);
+  // AlgVector(Instance instance) throw(Exception);
+  AlgVector(Instance instance);
 
-  /**
-   * Creates and returns a clone of this object.
-   *
-   * @return 		a clone of this instance.
-   * @throws CloneNotSupportedException if an error occurs
-   */
-  Object clone() throw(CloneNotSupportedException); 
-
-  /**
-   * Resets the elements to the default value which is 0.0.
-   */
 protected:
-  void initialize();
-
-  /**
-   * Initializes the values with random numbers between 0 and 1.
-   * 
-   * @param random	the random number generator to use for initializing
-   */
-  void initialize(Random random);
+  void initialize(bool isRand);
 
 public:
-  /**
-   * Returns the value of a cell in the matrix.
-   *
-   * @param index 	the row's index
-   * @return 		the value of the cell of the vector
-   */
   const double getElement(int index) {
     return m_Elements[index];
   }
 
-
-  /**
-   * Returns the number of elements in the vector.
-   *
-   * @return 		the number of rows
-   */
   const int numElements() {
   
     return m_Elements.length;
   }
 
-
-  /**
-   * Sets an element of the matrix to the given value.
-   *
-   * @param index 	the elements index
-   * @param value 	the new value
-   */
   const void setElement(int index, double value) {
     
     m_Elements[index] = value;
@@ -145,9 +118,10 @@ public:
    *
    * @param elements 	an array of doubles
    */
-  const void setElements(double[] elements) {
+  // const void setElements(double[] elements) {
+  const void setElements(double elements[], int cnt) {
 
-    for (int i = 0; i < elements.length; i++) {
+    for (int i = 0; i < cnt; i++) {
       m_Elements[i] = elements[i];
     }
   }
@@ -157,7 +131,8 @@ public:
    *
    * @return 		an array of doubles
    */
-  double[] getElements(); 
+  //  double[] getElements(); 
+  double * getElements(); 
 
   /**
    * Gets the elements of the vector as an instance.
@@ -168,7 +143,8 @@ public:
    * @return 		an array of doubles
    * @throws Exception	if length of vector is not number of numerical attributes
    */
-  Instance getAsInstance(Instances model, Random random) throw(Exception); 
+  // Instance getAsInstance(Instances model, Random random) throw(Exception); 
+  Instance getAsInstance(Instances model); 
     
   /**
    * Returns the sum of this vector with another.

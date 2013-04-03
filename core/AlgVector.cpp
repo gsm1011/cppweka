@@ -1,98 +1,72 @@
 #include "AlgVector.hpp"
+
 using namespace std;
 
 AlgVector::AlgVector(vector<double> array) {
-
-    m_Elements = new double[array.length];
-    for (int i = 0; i < array.length; i++) {
-        m_Elements[i] = array[i];
-    }
+  int len = array.size(); 
+  m_Elements = (double*)malloc(sizeof(double) * len);
+  for (int i = 0; i < len; i++) {
+    m_Elements[i] = array[i];
+  }
 }
 
-AlgVector::AlgVector(Instances format, Random random) throw(Exception) {
+AlgVector::AlgVector(Instances format) {
 
-    int len = format.numAttributes();
-    for (int i = 0; i < format.numAttributes(); i++) {
-        if (!format.attribute(i).isNumeric()) len--;
-    }
-    if (len > 0) {
-        m_Elements = new double[len];
-        initialize(random);
-    }
+  int len = format.numAttributes();
+  for (int i = 0; i < len; i++) {
+    if (!format.attribute(i).isNumeric()) len--;
+  }
+  if (len > 0) {
+    m_Elements = (double *)malloc(sizeof(double) * len);
+    initialize(true);
+  }
 }
 
-/**
- * Constructs a vector using an instance.
- * The vector has an element for each numerical attribute.
- * The other attributes (nominal, string) are ignored.
- *
- * @param instance 	with numeric attributes, that AlgVector gets build from
- * @throws Exception 	if instance doesn't have access to the data format or
- * 			no numeric attributes in the data
- */
-AlgVector::AlgVector(Instance instance) throw(Exception) {
+AlgVector::AlgVector(const Instance& instance) {
 
-    int len = instance.numAttributes();
+  int len = instance.numAttributes();
+  for (int i = 0; i < instance.numAttributes(); i++) {
+    if (!instance.attribute(i).isNumeric())
+      len--;
+  }
+  if (len > 0) {
+    m_Elements = (double *)malloc(sizeof(double) * sizeof); 
+    int n = 0;
     for (int i = 0; i < instance.numAttributes(); i++) {
-        if (!instance.attribute(i).isNumeric())
-            len--;
+      if (!instance.attribute(i).isNumeric())
+	continue;
+      m_Elements[n] = instance.value(i);
+      n++;
     }
-    if (len > 0) {
-        m_Elements = new double[len];
-        int n = 0;
-        for (int i = 0; i < instance.numAttributes(); i++) {
-            if (!instance.attribute(i).isNumeric())
-                continue;
-            m_Elements[n] = instance.value(i);
-            n++;
-        }
-    } else {
-        throw IllegalArgumentException("No numeric attributes in data!");
-    }
+  } else {
+    throw new IllegalArgumentException("No numeric attributes in data!");
+  }
 }
 
-/**
- * Creates and returns a clone of this object.
- *
- * @return 		a clone of this instance.
- * @throws CloneNotSupportedException if an error occurs
- */
-Object AlgVector::clone() throw(CloneNotSupportedException) {
-
-    AlgVector v = (AlgVector)super.clone();
-    v.m_Elements = new double[numElements()];
-    for (int i = 0; i < numElements(); i++) {
-        v.m_Elements[i] = m_Elements[i];
+void AlgVector::initialize(bool isRand) {
+  if(isRand) {
+    srand(time(NULL));
+    for (int i = 0; i < m_numElements; i++) {
+      m_Elements[i] = rand();
     }
+  } else {
 
-    return v;
-}
-
-void AlgVector::initialize() {
-
-    for (int i = 0; i < m_Elements.length; i++) {
+    for (int i = 0; i < m_numElements; i++) {
         m_Elements[i] = 0.0;
     }
+  }
 }
 
-void AlgVector::initialize(Random random) {
+double* AlgVector::getElements() {
 
-    for (int i = 0; i < m_Elements.length; i++) {
-        m_Elements[i] = random.nextDouble();
-    }
-}
-
-double[] AlgVector::getElements() {
-
-    double [] elements = new double[this->numElements()];
-    for (int i = 0; i < elements.length; i++) {
+  double* elements = (double*)malloc(sizeof(double) * m_numElements); 
+    for (int i = 0; i < m_numElements; i++) {
         elements[i] = m_Elements[i];
     }
     return elements;
 }
 
-Instance AlgVector::getAsInstance(Instances model, Random random)
-throw(Exception) {
+Instance AlgVector::getAsInstance(Instances model) {
 
     Instance newInst;
 
@@ -108,7 +82,7 @@ throw(Exception) {
             }
             if (model.attribute(i).isNominal()) {
                 int newVal = (int)
-                             (random.nextDouble() * (double) (model.attribute(i).numValues()));
+		  (rand() * (double) (model.attribute(i).numValues()));
                 if (newVal == (int) model.attribute(i).numValues())
                     newVal -= 1;
                 newInst.setValue(i, newVal);
@@ -140,7 +114,7 @@ const AlgVector::AlgVector add(AlgVector other) {
 
 const AlgVector::AlgVector substract(AlgVector other) {
 
-    int n = m_Elements.length;
+  int n = m_numElements; 
     AlgVector b;
     try {
         b = (AlgVector)clone();
@@ -226,7 +200,7 @@ string AlgVector::toString() {
  * @param args 	commandline options
  * @throws Exception	if something goes wrong in testing
  */
-void main(int argc, char* argv[]) throws Exception {
+/*void main(int argc, char* argv[]) throws Exception {
 
     double[] first = {2.3, 1.2, 5.0};
 
@@ -238,3 +212,4 @@ void main(int argc, char* argv[]) throws Exception {
         e.printStackTrace();
     }
 }
+*/

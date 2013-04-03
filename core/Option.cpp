@@ -14,14 +14,6 @@
  *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-/*
- *    Option.cpp
- *    Copyright (C) 1999 University of Waikato, Hamilton, New Zealand
- *
- */
-
-// package weka.core;
-
 /** 
  * Class to store information about an option. <p>
  *
@@ -34,82 +26,40 @@
  */
 class Option : public RevisionHandler {
 private:
-  /** What does this option do? */
-  string m_Description;
+    /** What does this option do? */
+    string m_Description;
 
-  /** The synopsis. */
-  string m_Synopsis;
+    /** The synopsis. */
+    string m_Synopsis;
 
-  /** What's the option's name? */
-  string m_Name;
+    /** What's the option's name? */
+    string m_Name;
 
-  /** How many arguments does it take? */
-  int m_NumArguments;
+    /** How many arguments does it take? */
+    int m_NumArguments;
 
-  /**
-   * Creates new option with the given parameters.
-   *
-   * @param description the option's description
-   * @param name the option's name
-   * @param numArguments the number of arguments
-   */
 public:
-  Option(string description, string name, 
-		int numArguments, string synopsis) {
+    Option(string description, string name, 
+	   int numArguments, string synopsis) {
   
-    m_Description = description;
-    m_Name = name;
-    m_NumArguments = numArguments;
-    m_Synopsis = synopsis;
-  }
+	m_Description = description;
+	m_Name = name;
+	m_NumArguments = numArguments;
+	m_Synopsis = synopsis;
+    }
 
-  /**
-   * Returns the option's description.
-   *
-   * @return the option's description
-   */
-  string description() {
+    Option Option(const Option& other); 
+
+    string description() {
   
-    return m_Description;
-  }
+	return m_Description;
+    }
 
-  /**
-   * Returns the option's name.
-   *
-   * @return the option's name
-   */
-  string name() {
+    string name() { return m_Name; }
 
-    return m_Name;
-  }
+    int numArguments() { return m_NumArguments; }
 
-  /**
-   * Returns the option's number of arguments.
-   *
-   * @return the option's number of arguments
-   */
-  int numArguments() {
+    string synopsis() { return m_Synopsis; }
   
-    return m_NumArguments;
-  }
-
-  /**
-   * Returns the option's synopsis.
-   *
-   * @return the option's synopsis
-   */
-  string synopsis() {
-  
-    return m_Synopsis;
-  }
-  
-  /**
-   * Returns the revision string.
-   * 
-   * @return		the revision
-   */
-  string getRevision() {
-    return RevisionUtils.extract("$Revision: 1.7 $");
-  }
+    string getRevision() { return RevisionUtils.extract("$Revision: 1.7 $"); }
 };
-

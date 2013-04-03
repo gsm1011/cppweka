@@ -14,14 +14,6 @@
  *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-/*
- *    OptionHandler.cpp
- *    Copyright (C) 1999 University of Waikato, Hamilton, New Zealand
- *
- */
-
-// package weka.core;
-
 // import java.util.*;
 #include <iostream>
 #include <string> 
@@ -29,21 +21,8 @@
 #include "Enumeration.hpp"
 
 using namespace std; 
-/** 
- * Interface to something that understands options.
- *
- * @author Eibe Frank (eibe@cs.waikato.ac.nz)
- * @author Len Trigg (trigg@cs.waikato.ac.nz)
- * @version $Revision: 1.8 $
- */
-class OptionHandler {
 
-  /**
-   * Returns an enumeration of all the available options..
-   *
-   * @return an enumeration of all available options.
-   */
-  // virtual Enumeration listOptions() = 0;
+class OptionHandler {
 
   /**
    * Sets the OptionHandler's options using the given list. All options
@@ -55,7 +34,7 @@ class OptionHandler {
    */
   //@ requires options != NULL;
   //@ requires \nonNULLelements(options);
-  virtual void setOptions(vector<string> options) throw(exception) = 0;
+    virtual void setOptions(vector<string> options) = 0;
 
   /**
    * Gets the current option settings for the OptionHandler.

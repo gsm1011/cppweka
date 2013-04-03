@@ -21,30 +21,25 @@
  */
 
 // package weka.core;
+#include <math.h>
+#include <vector>
+#include <iostream>
+#include <stdlib>
 
-// import java.lang.Math;
-// import java.lang.reflect.Array;
-// import java.util.Properties;
-// import java.io.File;
-// import java.io.FileInputStream;
-// import java.util.Random;
+using namespace std; 
 
-/**
- * Class implementing some simple utility methods.
- *
- * @author Eibe Frank 
- * @author Yong Wang 
- * @author Len Trigg 
- * @author Julien Prados
- * @version $Revision: 1.60 $
- */
 class Utils : public RevisionHandler {
 public:
   /** The natural logarithm of 2. */
-  static double log2 = log(2);
+  static double log2;
 
   /** The small deviation allowed in double comparisons. */
-  static double SMALL = 1e-6;
+  static double SMALL;
+
+    Utils() {
+	log2 = log(2);
+	SMALL = 1e-6;
+    }
   
   /**
    * Reads properties that inherit from three locations. Properties
@@ -73,11 +68,8 @@ public:
       // jdk1.1/docs/guide/misc/resources.html
       //      defaultProps.load(ClassLoader.getSystemResourceAsStream(resourceName));
       defaultProps.load((new Utils()).getClass().getClassLoader().getResourceAsStream(resourceName));
-    } catch (Exception ex) {
-/*      throw Exception("Problem reading default properties: "
-	+ ex.getMessage()); */
-      System.err.println("Warning, unable to load properties file from "
-			 +"system resource (Utils.cpp)");
+    } catch (std::exception ex) {
+	cerr << "Warning, unable to load properties file from system resource (Utils.cpp)" << endl;
     }
 
     // Hardcoded slash is OK here
@@ -96,7 +88,7 @@ public:
       try {
         userProps.load(new FileInputStream(propFile));
       } catch (Exception ex) {
-        throw Exception("Problem reading user properties: " + propFile);
+	  throw new std::exception("Problem reading user properties: " + propFile);
       }
     }
 
@@ -116,13 +108,8 @@ public:
 
   /**
    * Returns the correlation coefficient of two double vectors.
-   *
-   * @param y1 double vector 1
-   * @param y2 double vector 2
-   * @param n the length of two double vectors
-   * @return the correlation coefficient
    */
-  static final double correlation(double y1[],double y2[],int n) {
+  static final double correlation(double y1[], double y2[], int n) {
 
     int i;
     double av1 = 0.0, av2 = 0.0, y11 = 0.0, y22 = 0.0, y12 = 0.0, c;
@@ -152,10 +139,6 @@ public:
 
   /**
    * Removes all occurrences of a string from another string.
-   *
-   * @param instring the string to remove substrings from.
-   * @param substring the substring to remove.
-   * @return the input string with occurrences of substring removed.
    */
   static string removeSubstring(string inString, string substring) {
 
@@ -169,15 +152,6 @@ public:
     return result.toString();
   }
 
-  /**
-   * Replaces with a new string, all occurrences of a string from 
-   * another string.
-   *
-   * @param instring the string to replace substrings in.
-   * @param substring the substring to replace.
-   * @param replacestring the replacement substring
-   * @return the input string with occurrences of substring replaced.
-   */
   static string replaceSubstring(string inString, string subString,
 					string replaceString) {
 
@@ -192,30 +166,11 @@ public:
     return result.toString();
   }
 
-
-  /**
-   * Pads a string to a specified length, inserting spaces on the left
-   * as required. If the string is too long, characters are removed (from
-   * the right).
-   *
-   * @param instring the input string
-   * @param length the desired length of the output string
-   * @return the output string
-   */
   static string padLeft(string inString, int length) {
 
     return fixStringLength(inString, length, false);
   }
   
-  /**
-   * Pads a string to a specified length, inserting spaces on the right
-   * as required. If the string is too long, characters are removed (from
-   * the right).
-   *
-   * @param instring the input string
-   * @param length the desired length of the output string
-   * @return the output string
-   */
   static string padRight(string inString, int length) {
 
     return fixStringLength(inString, length, true);
@@ -244,6 +199,7 @@ private:
     }
     return inString;
   }
+
 public:
   /**
    * Rounds a double and converts it into String.

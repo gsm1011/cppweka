@@ -23,6 +23,7 @@
 // package weka.core;
 #include <iostream>
 
+using namespace std; 
 /**
  * For classes that should return their source control revision.
  *
