@@ -1,74 +1,6 @@
-/*
- *    This program is free software; you can redistribute it and/or modify
- *    it under the terms of the GNU General Public License as published by
- *    the Free Software Foundation; either version 2 of the License, or
- *    (at your option) any later version.
- *
- *    This program is distributed in the hope that it will be useful,
- *    but WITHOUT ANY WARRANTY; without even the implied warranty of
- *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *    GNU General Public License for more details.
- *
- *    You should have received a copy of the GNU General Public License
- *    along with this program; if not, write to the Free Software
- *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- */
+#include "ClassDiscovery.hpp"
 
-/*
- * ClassDiscovery.cpp
- * Copyright (C) 2005 University of Waikato, Hamilton, New Zealand
- *
- */
-
-// package weka.core;
-
-// import java.io.File;
-// import java.lang.reflect.Modifier;
-// import java.net.URL;
-// import java.util.Collections;
-// import java.util.Comparator;
-// import java.util.Enumeration;
-// import java.util.HashSet;
-// import java.util.Hashtable;
-// import java.util.StringTokenizer;
-// import java.util.Vector;
-// import java.util.jar.JarEntry;
-// import java.util.jar.JarFile;
-
-/**
- * This class is used for discovering classes that implement a certain
- * interface or a derived from a certain class.
- *
- * @author FracPete (fracpete at waikato dot ac dot nz)
- * @version $Revision: 5377 $
- * @see StringCompare
- */
-class ClassDiscovery : public RevisionHandler {
-
-  /** whether to output some debug information. */
-public:
-  const static bool VERBOSE = false;
-  
-  /** for caching queries (classname+packagename &lt;-&gt; Vector with classnames). */
-protected:
-  static Hashtable<String,Vector> m_Cache;
-  
-public:
-  /** notify if VERBOSE is still on */
-  static {
-    if (VERBOSE)
-      System.err.println(ClassDiscovery.class.getName() + ": VERBOSE ON");
-  }
-  
-  /**
-   * Checks whether the "otherclass" is a subclass of the given "superclass".
-   * 
-   * @param superclass      the superclass to check against
-   * @param otherclass      this class is checked whether it is a subclass
-   *                        of the the superclass
-   * @return                TRUE if "otherclass" is a true subclass
-   */
-  static bool isSubclass(string superclass, string otherclass) {
+static bool ClassDiscovery::isSubclass(string superclass, string otherclass) {
     try {
       return isSubclass(Class.forName(superclass), Class.forName(otherclass));
     }
@@ -77,15 +9,7 @@ public:
     }
   }
   
-  /**
-   * Checks whether the "otherclass" is a subclass of the given "superclass".
-   * 
-   * @param superclass      the superclass to check against
-   * @param otherclass      this class is checked whether it is a subclass
-   *                        of the the superclass
-   * @return                TRUE if "otherclass" is a true subclass
-   */
-  static bool isSubclass(Class superclass, Class otherclass) {
+static bool ClassDiscovery::isSubclass(Class superclass, Class otherclass) {
     Class       currentclass;
     bool     result;
     
@@ -106,14 +30,7 @@ public:
     return result;
   }
   
-  /**
-   * Checks whether the given class implements the given interface.
-   * 
-   * @param intf      the interface to look for in the given class
-   * @param cls       the class to check for the interface
-   * @return          TRUE if the class contains the interface 
-   */
-  static bool hasInterface(string intf, string cls) {
+static bool ClassDiscovery::hasInterface(string intf, string cls) {
     try {
       return hasInterface(Class.forName(intf), Class.forName(cls));
     }
@@ -122,14 +39,7 @@ public:
     }
   }
   
-  /**
-   * Checks whether the given class implements the given interface.
-   * 
-   * @param intf      the interface to look for in the given class
-   * @param cls       the class to check for the interface
-   * @return          TRUE if the class contains the interface 
-   */
-  static bool hasInterface(Class intf, Class cls) {
+static bool ClassDiscovery::hasInterface(Class intf, Class cls) {
     Class[]       intfs;
     int           i;
     bool       result;
@@ -161,15 +71,7 @@ public:
     return result;
   }
   
-  /**
-   * If the given package can be found in this part of the classpath then 
-   * an URL object is returned, otherwise <code>NULL</code>.
-   * 
-   * @param classpathPart     the part of the classpath to look for the package
-   * @param pkgname           the package to look for
-   * @return                  if found, the url as string, otherwise NULL
-   */
-  protected static URL getURL(string classpathPart, string pkgname) {
+static URL ClassDiscovery::getURL(string classpathPart, string pkgname) {
     string              urlStr;
     URL                 result;
     File                classpathFile;
@@ -224,15 +126,7 @@ public:
     return result;
   }
 
-  /**
-   * Checks the given packages for classes that inherited from the given class,
-   * in case it's a class, or implement this class, in case it's an interface.
-   *
-   * @param classname       the class/interface to look for
-   * @param pkgnames        the packages to search in
-   * @return                a list with all the found classnames
-   */
-  static Vector find(string classname, String[] pkgnames) {
+static Vector ClassDiscovery::find(string classname, String[] pkgnames) {
     Vector      result;
     Class       cls;
 
@@ -249,15 +143,7 @@ public:
     return result;
   }
 
-  /**
-   * Checks the given package for classes that inherited from the given class,
-   * in case it's a class, or implement this class, in case it's an interface.
-   *
-   * @param classname       the class/interface to look for
-   * @param pkgname         the package to search in
-   * @return                a list with all the found classnames
-   */
-  static Vector find(string classname, string pkgname) {
+static Vector ClassDiscovery::find(string classname, string pkgname) {
     Vector      result;
     Class       cls;
 
@@ -274,15 +160,7 @@ public:
     return result;
   }
 
-  /**
-   * Checks the given packages for classes that inherited from the given class,
-   * in case it's a class, or implement this class, in case it's an interface.
-   *
-   * @param cls             the class/interface to look for
-   * @param pkgnames        the packages to search in
-   * @return                a list with all the found classnames
-   */
-  static Vector find(Class cls, String[] pkgnames) {
+static Vector ClassDiscovery::find(Class cls, String[] pkgnames) {
     Vector	result;
     int		i;
     HashSet	names;
@@ -300,15 +178,7 @@ public:
     return result;
   }
 
-  /**
-   * Checks the given package for classes that inherited from the given class,
-   * in case it's a class, or implement this class, in case it's an interface.
-   *
-   * @param cls             the class/interface to look for
-   * @param pkgname         the package to search in
-   * @return                a list with all the found classnames
-   */
-  static Vector find(Class cls, string pkgname) {
+static Vector ClassDiscovery::find(Class cls, string pkgname) {
     Vector                result;
     StringTokenizer       tok;
     string                part;
@@ -446,16 +316,7 @@ public:
     return result;
   }
 
-  /**
-   * adds all the sub-directories recursively to the list.
-   * 
-   * @param prefix	the path prefix
-   * @param dir		the directory to look in for sub-dirs
-   * @param list	the current list of sub-dirs
-   * @return		the new list of sub-dirs
-   */
-protected:
-  static HashSet getSubDirectories(string prefix, File dir, HashSet list) {
+static HashSet ClassDiscovery::getSubDirectories(string prefix, File dir, HashSet list) {
     File[]	files;
     int		i;
     string 	newPrefix;
@@ -482,13 +343,8 @@ protected:
       
     return list;
   }
-public:
-  /**
-   * Lists all packages it can find in the classpath.
-   *
-   * @return                a list with all the found packages
-   */
-  static Vector findPackages() {
+
+static Vector ClassDiscovery::findPackages() {
     Vector		result;
     StringTokenizer	tok;
     String		part;
@@ -543,78 +399,27 @@ public:
     return result;
   }
 
-  /**
-   * initializes the cache for the classnames.
-   */
-protected:
-  static void initCache() {
+static void ClassDiscovery::initCache() {
     if (m_Cache == NULL)
       m_Cache = new Hashtable<String,Vector>();
   }
   
-  /**
-   * adds the list of classnames to the cache.
-   * 
-   * @param cls		the class to cache the classnames for
-   * @param pkgname	the package name the classes were found in
-   * @param classnames	the list of classnames to cache
-   */
-  static void addCache(Class cls, string pkgname, Vector classnames) {
+static void ClassDiscovery::addCache(Class cls, string pkgname, Vector classnames) {
     initCache();
     m_Cache.put(cls.getName() + "-" + pkgname, classnames);
   }
   
-  /**
-   * returns the list of classnames associated with this class and package, if
-   * available, otherwise NULL.
-   * 
-   * @param cls		the class to get the classnames for
-   * @param pkgname	the package name for the classes 
-   * @return		the classnames if found, otherwise NULL
-   */
-  static Vector getCache(Class cls, string pkgname) {
+static Vector ClassDiscovery::getCache(Class cls, string pkgname) {
     initCache();
     return m_Cache.get(cls.getName() + "-" + pkgname);
   }
-public:
-  /**
-   * clears the cache for class/classnames relation.
-   */
-  static void clearCache() {
+
+static void ClassDiscovery::clearCache() {
     initCache();
     m_Cache.clear();
   }
-  
-  /**
-   * Returns the revision string.
-   * 
-   * @return		the revision
-   */
-  string getRevision() {
-    return RevisionUtils.extract("$Revision: 5377 $");
-  }
- 
-  /**
-   * compares two strings. The following order is used:<br/>
-   * <ul>
-   *    <li>case insensitive</li>
-   *    <li>german umlauts (&auml; , &ouml; etc.) or other non-ASCII letters
-   *    are treated as special chars</li>
-   *    <li>special chars &lt; numbers &lt; letters</li>
-   * </ul>
-   */
-  class StringCompare : public Comparator, 
-			public RevisionHandler {
 
-    /**
-     * appends blanks to the string if its shorter than <code>len</code>.
-     * 
-     * @param s		the string to pad
-     * @param len	the minimum length for the string to have
-     * @return		the padded string
-     */
-  private:
-    string fillUp(string s, int len) {
+string StringCompare::fillUp(string s, int len) {
       while (s.length() < len)
         s += " ";
       return s;
@@ -626,7 +431,7 @@ public:
      * @param c		the character to check
      * @return		the group
      */
-    int charGroup(char c) {
+int StringCompare::charGroup(char c) {
       int         result;
       
       result = 0;
@@ -639,15 +444,7 @@ public:
       return result;
     }
 
-  public:    
-    /**
-     * Compares its two arguments for order.
-     * 
-     * @param o1	the first object
-     * @param o2	the second object
-     * @return		-1 if o1&lt;o2, 0 if o1=o2 and 1 if o1&;gt;o2
-     */    
-    int compare(Object o1, Object o2) {
+int StringCompare::compare(Object o1, Object o2) {
       string        s1;
       string        s2;
       int           i;
@@ -701,7 +498,7 @@ public:
      * @param obj	the object to compare with this Comparator
      * @return		true if the object is a StringCompare object as well
      */
-    bool equals(Object obj) {
+bool StringCompare::equals(Object obj) {
       return (obj instanceof StringCompare);
     }
     
@@ -710,28 +507,12 @@ public:
      * 
      * @return		the revision
      */
-    string getRevision() {
+string StringCompare::getRevision() {
       return RevisionUtils.extract("$Revision: 5377 $");
     }
   }
-};
 
-/**
- * Possible calls:
- * <ul>
- *    <li>
- *      weka.core.ClassDiscovery &lt;packages&gt;<br/>
- *      Prints all the packages in the current classpath
- *    </li>
- *    <li>
- *      weka.core.ClassDiscovery &lt;classname&gt; &lt;packagename(s)&gt;<br/>
- *      Prints the classes it found.
- *    </li>
- * </ul>
- * 
- * @param args	the commandline arguments
- */
-static void main(String[] args) {
+static void ClassDiscovery::main(String[] args) {
   Vector      	list;
   Vector 		packages;
   int         	i;
@@ -774,3 +555,4 @@ static void main(String[] args) {
     System.exit(1);
   }
 }
+
