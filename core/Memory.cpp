@@ -14,17 +14,6 @@
  *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-/*
- * Memory.cpp
- * Copyright (C) 2005 University of Waikato, Hamilton, New Zealand
- *
- */
-
-
-// package weka.core;
-
-// import javax.swing.JOptionPane;
-
 /**
  * A little helper class for Memory management. Very crude, since JDK 1.4 
  * doesn't offer real Memory Management.<p/>
